@@ -1,0 +1,25 @@
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+        
+class Professor(Pessoa):
+    def __init__(self, nome, idade):
+        super().__init__(nome, idade)
+        
+    def ensinar(self):
+        return 'ensinando'
+        
+class Aluno(Pessoa):
+    def __init__(self, nome, idade):
+        super().__init__(nome, idade)
+        
+    def estudar(self):
+        return 'estudando'
+        
+p1 = Professor('Paulo Albuquerque', 50)
+
+p2 = Aluno('Raian Tomaz', 24)
+
+print(f'O {p1.nome} esta {p1.ensinar()}')
+print(f'O {p2.nome} esta {p2.estudar()}')
