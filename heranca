@@ -1,0 +1,30 @@
+class Animal:
+    '''def __init__(self, tipo, sexo, pelagem):
+        self.tipo = tipo
+        self.sexo = sexo
+        self.pelagem = pelagem'''
+        
+    def comer(self):
+        return 'Comendo'
+
+    def dormir(self):
+        return 'Dormindo'
+    
+class Cachorro(Animal):
+    '''def __init__(self, tipo, sexo, pelagem, raca):
+        super().__init__(tipo, sexo, pelagem)'''
+        
+    def latir(self):
+        return 'Au Au'
+    
+class Gato(Animal):
+    def miar(self):
+        return 'Miau Miau'
+        
+dog = Cachorro()
+
+print('Meu cachorro está', dog.comer(), 'e depois ele faz ', dog.latir())
+
+cat = Gato()
+
+print('\nMeu gato está', cat.dormir(), 'e depois ele faz ', cat.miar())
