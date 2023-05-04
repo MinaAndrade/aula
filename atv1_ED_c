@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(void)
+{
+  struct Horas {
+      //horario
+      int hora;
+      int minutos;
+      int segundos;
+      //data
+      int dia;
+      int mes;
+      int ano;
+      //Compromisso
+      int data;
+      int horario;
+      int mensagem;
+  }
+  
+  return 0;
+}
