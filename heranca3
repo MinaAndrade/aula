@@ -1,0 +1,46 @@
+class FiguraGeometrica:
+    pass
+    
+class Circulo(FiguraGeometrica):
+    def __init__(self, raio):
+        self.raio = raio
+        
+    def area(self):
+        return 3.14 * self.raio * self.raio
+        
+    def perimetro(self):
+        return 2 * 3.14 * self.raio
+        
+class Quadrado(FiguraGeometrica):
+    def __init__(self, base):
+        self.base = base
+        
+    def area(self):
+        return self.base * self.base
+        
+    def perimetro(self):
+        return 4 * self.base
+        
+class Retangulo(FiguraGeometrica):
+    def __init__(self, base, altura):
+        self.base = base
+        self.altura = altura
+        
+    def area(self):
+        return self.base * self.altura
+        
+    def perimetro(self):
+        return (2 * self.altura) + (2 * self.base)
+        
+quad = Quadrado(10)
+
+circ = Circulo(5)
+
+ret = Retangulo(10, 5)
+
+print('Area do quadrado: ', quad.area())
+print('Perimetro do quadrado: ', quad.perimetro())
+print('Area do retangulo: ', ret.area())
+print('Perimetro do retangulo: ', ret.perimetro())
+print('Area do circulo: {:.2f} '.format(circ.area()))
+print('Perimetro do circulo: {:.2f}'.format(circ.perimetro()))
