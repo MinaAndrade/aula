@@ -1,1 +1,1 @@
-# Resoluções de atividades da faculdade
+# Resoluções de atividades da faculdade e de cursos
