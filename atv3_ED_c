@@ -10,14 +10,13 @@ int main(){
 	};
 	
 	int opcao, i, num;
-	float maior_media = 0.0, menor_media = 0.0, maior_n1 = 0.0;
-	char al_maior_media[50], al_menor_media[50], aluno_n1[50];
+	float maior_media = 0.0, menor_media = 10.0, maior_n1 = 0.0;
+	char aprovado[5], reprovado[5], al_maior_media[50], al_menor_media[50], aluno_n1[50];
 	float media[5];
 	
 	struct Aluno al[5];
 		
-	printf("\nDigite a opcao desejada:\n1 - Registro\n2 - Aluno com a maior nota da primeira prova\n3 - Aluno com maior media geral\n4 - Aluno com menor media geral\n5 - Status de aprovacao\n");
-	printf("Digite -1 para sair do sistema.\n");
+	printf("\nDigite a opcao desejada:\n1 - Registro\n2 - Aluno com a maior nota da primeira prova\n3 - Aluno com maior media geral\n4 - Aluno com menor media geral\n5 - Status de aprovacao\n-1 - para sair do sistema\n");
 	scanf("%d", &opcao);
 	
 	while (opcao != -1){
@@ -61,19 +60,25 @@ int main(){
 		}
 		else if (opcao == 4){
 			for (i = 0; i < num; i++){
-				if (media[i] > menor_media){
+				if (media[i] < menor_media){
 					menor_media = media[i];
 					strcpy(al_menor_media, al[i].nome);
 				}
 			}
 			printf("O aluno com a menor media geral foi %s", al_menor_media);
 		}
-		/*else if (opcao == 5){
+		else if (opcao == 5){
 			for (i = 0; i < num; i++){
 				if (media[i] >= 5){
-					printf("O aluno %s ");
+					strcpy(aprovado, al[i].nome);
+					printf("Aprovado: %s\n", aprovado);
 				}
-			}*/
+				else{
+					strcpy(reprovado, al[i].nome);
+					printf("Reprovado: %s\n", reprovado);
+				}
+			}
+		}
 		else{
 			printf("Opção inválida!");
 		}
