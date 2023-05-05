@@ -7,19 +7,17 @@ int main(){
 		char endereco[100];
 	};
 	
-	int opcao, i, num = 2;
+	int opcao, i, num;
 	
-	struct Pessoa p1[num];
+	struct Pessoa p1[10];
 		
-	printf("\nDigite a opcao desejada:\n1 - Registro\n2 - Mostrar dados salvos\n");
-	printf("Digite -1 para sair do sistema.\n");
+	printf("\nDigite a opcao desejada:\n 1 - Registro\n 2 - Mostrar dados salvos\n-1 - Sair do sistema\n");
 	scanf("%d", &opcao);
 	
 	while (opcao != -1){
 		if (opcao == 1){
-			printf("\nDigite quantas pessoas quer cadastrar: \n");
+			printf("\nDigite quantas pessoas quer cadastrar (até 10 registros): \n");
 			scanf("%d", &num);
-			printf("Obs: Ate %d registros\n", num);
 			
 			for (i = 0; i < num; i++){
 				printf("\nDigite os dados da %da pessoa: \n", i+1);
@@ -42,9 +40,7 @@ int main(){
 		else{
 			printf("Opção inválida!");
 		}
-		printf("\nDigite a opção desejada:\n1 - Registro\n2 - Mostrar dados salvos\n");
-		printf("Obs: Ate %d registros\n", num);
-		printf("Digite -1 para sair do sistema.\n");
-		scanf("%d", &opcao);
+	printf("\nDigite a opcao desejada:\n 1 - Registro\n 2 - Mostrar dados salvos\n-1 - Sair do sistema\n");
+	scanf("%d", &opcao);
 	}
 }
