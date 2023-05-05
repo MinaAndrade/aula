@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(){
+	struct Aluno {
+		char nome[50];
+		int matricula;
+		float n1, n2, n3;
+	};
+	
+	int opcao, i, num;
+	float maior_media = 0.0, menor_media = 0.0, maior_n1 = 0.0;
+	char al_maior_media[50], al_menor_media[50], aluno_n1[50];
+	float media[5];
+	
+	struct Aluno al[5];
+		
+	printf("\nDigite a opcao desejada:\n1 - Registro\n2 - Aluno com a maior nota da primeira prova\n3 - Aluno com maior media geral\n4 - Aluno com menor media geral\n5 - Status de aprovacao\n");
+	printf("Digite -1 para sair do sistema.\n");
+	scanf("%d", &opcao);
+	
+	while (opcao != -1){
+		if (opcao == 1){
+			printf("\nDigite quantas pessoas quer cadastrar (Ate 5 registros): \n");
+			scanf("%d", &num);
+			
+			for (i = 0; i < num; i++){
+				printf("\nDigite os dados da %da pessoa: \n", i+1);
+				printf("Digite seu nome: ");
+				scanf("%s", &al[i].nome);
+				printf("Digite sua matricula: ");
+				scanf("%d", &al[i].matricula);
+				printf("Digite a primeira nota: ");
+				scanf("%f", &al[i].n1);
+				printf("Digite a segunda nota: ");
+				scanf("%f", &al[i].n2);				
+				printf("Digite a terceira nota: ");
+				scanf("%f", &al[i].n3);	
+				
+				media[i] = (al[i].n1 + al[i].n2 + al[i].n3) / 3;
+			}
+		}
+		else if (opcao == 2){
+			for (i = 0; i < num; i++){
+				if (al[i].n1 > maior_n1){
+					maior_n1 = al[i].n1;
+					strcpy(aluno_n1, al[i].nome);
+				}
+			}
+			printf("O aluno com a maior n1 foi %s\n", aluno_n1);
+		}
+		else if (opcao == 3){
+			for (i = 0; i < num; i++){
+				if (media[i] > maior_media){
+					maior_media = media[i];
+					strcpy(al_maior_media, al[i].nome);
+				}
+			}
+			printf("O aluno com a maior media geral foi %s", al_maior_media);
+		}
+		else if (opcao == 4){
+			for (i = 0; i < num; i++){
+				if (media[i] > menor_media){
+					menor_media = media[i];
+					strcpy(al_menor_media, al[i].nome);
+				}
+			}
+			printf("O aluno com a menor media geral foi %s", al_menor_media);
+		}
+		/*else if (opcao == 5){
+			for (i = 0; i < num; i++){
+				if (media[i] >= 5){
+					printf("O aluno %s ");
+				}
+			}*/
+		else{
+			printf("Opção inválida!");
+		}
+	printf("\nDigite a opcao desejada:\n1 - Registro\n2 - Aluno com a maior nota da primeira prova\n3 - Aluno com maior media geral\n4 - Aluno com menor media geral\n5 - Status de aprovacao\n");
+	printf("Digite -1 para sair do sistema.\n");
+	scanf("%d", &opcao);
+	}
+}
