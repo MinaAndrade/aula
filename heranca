@@ -1,8 +1,12 @@
 class Animal:
-    '''def __init__(self, tipo, sexo, pelagem):
-        self.tipo = tipo
-        self.sexo = sexo
-        self.pelagem = pelagem'''
+    def __init__(self, tipo, sexo, pelagem):
+        self.__tipo = tipo
+        self.__sexo = sexo
+        self.__pelagem = pelagem
+
+    @property
+    def tipo(self):
+        return self.__tipo = tipo
         
     def comer(self):
         return 'Comendo'
@@ -22,6 +26,8 @@ class Gato(Animal):
         return 'Miau Miau'
         
 dog = Cachorro()
+
+print(f'{self.tipo})
 
 print('Meu cachorro está', dog.comer(), 'e depois ele faz ', dog.latir())
 
